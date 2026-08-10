@@ -4,7 +4,7 @@ set -euo pipefail
 
 SOURCE_FILE="/root/.cache/modelscope/hub/datasets/grade_school_math/test.jsonl"
 TOKENIZER_PATH="/root/.cache/modelscope/hub/models/Eco-Tech/DeepSeek-V4-Flash-w8a8-mtp"
-DATASET_ROOT="/root/.cache/modelscope/hub/datasets/gsm8k"
+DATASET_ROOT="/root/.cache/modelscope/hub/datasets/gsm8k_deepseekv4"
 PAGE_SIZE="128"
 
 target_tokens="64000"
