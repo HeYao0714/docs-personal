@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-SOURCE_FILE="/home/t00937989/datasets/gsm8k/test.jsonl"
+SOURCE_FILE="/root/.cache/modelscope/hub/datasets/grade_school_math/test.jsonl"
 TOKENIZER_PATH="/home/weights/DeepSeek-V4-Pro-w4a8-mtp"
 DATASET_ROOT="/home/t00937989/datasets/gsm8k"
 PAGE_SIZE="128"
