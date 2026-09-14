@@ -60,7 +60,7 @@ try:
 except ImportError:
     # Some trees do not ship the Ascend test utils; fall back to the local
     # weights path used by the NPU runners.
-    #QWEN3_5_4B_WEIGHTS_PATH = "/home/weights/Qwen3.5-4B"
+    QWEN3_5_4B_WEIGHTS_PATH = "/home/weights/Qwen3.5-4B"
 
 os.environ["SGLANG_ENABLE_FAST_INPUT_LOGPROBS"] = "0"
 
