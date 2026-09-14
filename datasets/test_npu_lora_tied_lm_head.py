@@ -54,13 +54,7 @@ from sglang.srt.utils.hf_transformers_utils import get_tokenizer
 from sglang.test.ci.ci_register import register_npu_ci
 from sglang.test.runners import SRTRunner
 from sglang.test.test_utils import DEFAULT_PORT_FOR_SRT_TEST_RUNNER, CustomTestCase
-
-try:
-    from sglang.test.ascend.test_ascend_utils import QWEN3_5_4B_WEIGHTS_PATH
-except ImportError:
-    # Some trees do not ship the Ascend test utils; fall back to the local
-    # weights path used by the NPU runners.
-    QWEN3_5_4B_WEIGHTS_PATH = "/home/weights/Qwen3.5-4B"
+from sglang.test.ascend.test_ascend_utils import QWEN3_5_4B_WEIGHTS_PATH
 
 os.environ["SGLANG_ENABLE_FAST_INPUT_LOGPROBS"] = "0"
 
