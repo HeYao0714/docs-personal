@@ -1,3 +1,4 @@
+#拉起sglang服务
 echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 sysctl -w vm.swappiness=0
 sysctl -w kernel.numa_balancing=0
@@ -61,3 +62,55 @@ sglang serve \
         --speculative-draft-model-path $DFLASH_PATH \
         --speculative-num-draft-tokens 8 \
         --dp-size 2 --enable-dp-attention --enable-dp-lm-head \
+
+#测试数据集指令
+import os
+from evalscope import TaskConfig, run_task
+
+MODEL_NAME = 'MiMo-V2.5-Pro-FP4-DFlash'
+API_URL = 'http://127.0.0.1:8010/v1'
+API_KEY = 'EMPTY'
+
+# 指向数据集目录本身（不是 parquet 文件）
+LOCAL_DATASET_PATH = '/mnt/share/w00937173/run_file/mimo-v2.5-pro/data/hle_dataset'
+
+DATASET_NAME = 'hle'
+
+task_cfg = TaskConfig(
+    model=MODEL_NAME,
+    api_url=API_URL,
+    api_key=API_KEY,
+    eval_type='openai_api',
+
+    datasets=[DATASET_NAME],
+
+    # 不要设 dataset_hub，让它自动判断
+
+    dataset_args={
+        DATASET_NAME: {
+            'local_path': LOCAL_DATASET_PATH,   # 关键：覆盖默认数据集路径
+            'extra_params': {
+                # HLE 仅支持该参数；纯文本模型设为 False，多模态模型设为 True
+                'include_multi_modal': False,
+            }
+        }
+    },
+
+    # HLE 依赖 LLM Judge 评分，必须提供裁判模型
+    judge_model_args={
+        'model_id': MODEL_NAME,   # 可复用当前模型，建议换更强模型做裁判
+        'api_url': API_URL,
+        'api_key': API_KEY,
+    },
+
+    eval_batch_size=5,
+    limit=3,
+    generation_config={
+        'temperature': 0.7,
+        'parallel_tool_calls': True,
+        'stream': True,
+    }
+)
+
+if __name__ == '__main__':
+    run_task(task_cfg=task_cfg)
