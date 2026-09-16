@@ -134,3 +134,42 @@ def test_max_buffer(self):
 
         finally:
             ws.close()
+
+
+def create_active_session(self, idx, result_list, lock):
+        res = {"idx": idx, "ok": False, "msg": ""}
+        ws = None
+        try:
+            ws = websocket.create_connection(WS_URL, timeout=3)
+
+            # Receive the first message
+            first_raw = ws.recv()
+            first_msg = json.loads(first_raw)
+
+            if first_msg.get("type") == "error":
+                err = first_msg.get("error", {})
+                res["msg"] = (
+                    f"Service rejected | code={err.get('code')} | {err.get('message')}"
+                )
+
+            elif first_msg.get("type") != "session.created":
+                res["msg"] = (
+                    f"Session creation event not received; actual type is: {first_msg.get('type')}"
+                )
+
+            else:
+                time.sleep(2)
+                res["ok"] = True
+                res["msg"] = "Active session successfully created."
+        except Exception as e:
+            res["msg"] = f"Connection error: {str(e)}"
+        finally:
+            if ws is not None:
+                try:
+                    ws.close()
+                except Exception:
+                    pass
+
+        # Thread-safe writing of results
+        with lock:
+            result_list.append(res)
