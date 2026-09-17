@@ -49,21 +49,20 @@ sglang serve \
         --trust-remote-code \
         --attention-backend ascend \
         --device npu \
-        --mem-fraction-static 0.92 \
+        --mem-fraction-static 0.905 \
         --tp-size 8 --nnodes 1 --node-rank 0 \
         --host 127.0.0.1 \
-        --port 9903 \
-        --chunked-prefill-size 4096 \
-        --max-total-tokens 80000 \
-        --max-running-requests 32 \
+        --port 8010 \
+        --chunked-prefill-size 8192 --max-total-tokens 600000 \
+        --max-running-requests 8 \
         --moe-a2a-backend deepep --deepep-mode auto \
-        --cuda-graph-bs-decode 1 2 4 8 16 \
+        --cuda-graph-bs-decode 1 2 4 6 8 \
         --speculative-algorithm DFLASH \
         --speculative-draft-model-path $DFLASH_PATH \
         --speculative-num-draft-tokens 8 \
-        --dp-size 2 --enable-dp-attention --enable-dp-lm-head \
+        --enable-metrics \
 
-#测试数据集指令
+# 2.使用evalscope测试hle数据集
 import os
 from evalscope import TaskConfig, run_task
 
@@ -114,3 +113,19 @@ task_cfg = TaskConfig(
 
 if __name__ == '__main__':
     run_task(task_cfg=task_cfg)
+
+# 3.用benchserving的方式测接收率，接收率>0.25
+python3 -m sglang.bench_serving \
+  --backend sglang \
+  --host 141.61.33.17 \
+  --port 8010 \
+  --model /mnt/share/weights/MiMo-V2.5-Pro-FP4-DFlash \
+  --dataset-path /mnt/share/w00937173/run_file/mimo-v2.5-pro/ShareGPT_V3_unfiltered_cleaned_split.json \
+  --dataset-name random \
+  --tokenize-prompt \
+  --random-input-len 16000 \
+  --random-output-len 1000 \
+  --request-rate inf \
+  --random-range-ratio 1 \
+  --num-prompts 128 \
+  --max-concurrency 32 
