@@ -80,15 +80,15 @@ python3 -m sglang.launch_server \
         --trust-remote-code \
         --host 127.0.0.1 \
         --mem-fraction-static 0.87 \
-        --max-running-requests 104 \
+        --max-running-requests 112 \
         --port 8964 \
-        --cuda-graph-bs-decode 1 4 8 13 16\
+        --cuda-graph-bs-decode 1 4 8 14 16\
         --dp 8 \
         --enable-dp-attention \
         --enable-dp-lm-head \
         --moe-a2a-backend deepep \
         --ep-size 8 \
         --stream-interval 64 \
-        --schedule-conservativeness 0.5 \
+        --schedule-conservativeness 0.4 \
         --enable-multimodal \
         --mm-attention-backend ascend_attn \
