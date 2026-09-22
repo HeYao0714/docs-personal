@@ -33,3 +33,6 @@ Traceback (most recent call last):
   File "/sgl-workspace/sglang/python/sglang/test/ascend/e2e/test_npu_accuracy_utils.py", line 215, in run_evalscope
     raise subprocess.CalledProcessError(process.returncode, cmd)
 subprocess.CalledProcessError: Command 'test_env_evalscope/bin/python /tmp/evalscope_run_MiMo-V2.5-Pro-FP4-DFlash_hle.py' returned non-zero exit status 1.
+
+
+https://pypi.tuna.tsinghua.edu.cn/simple
