@@ -1,0 +1,112 @@
+agent_config: null
+analysis_report: false
+api_key: '**********'
+api_url: http://127.0.0.1:20066/v1/chat/completions
+chat_template: null
+collect_perf: true
+dataset_args:
+  hle:
+    extra_params:
+      include_multi_modal: false
+    local_path: /mnt/share/w00937173/run_file/mimo-v2.5-pro/data/hle_dataset
+dataset_dir: /root/.cache/modelscope/hub/datasets
+dataset_hub: modelscope
+datasets:
+- hle
+debug: false
+enable_progress_tracker: false
+eval_backend: Native
+eval_batch_size: 5
+eval_config: null
+eval_type: openai_api
+evalscope_version: 1.12.0
+evaluation_identity:
+  benchmarks:
+    hle:
+      cache_source: null
+      evaluation_version: v1.0
+      fingerprint: sha256:38caefdbb93a26eb8b0ee19d73ce20e2767dcea68be54883695554829e53d389
+  schema_version: 1
+generation_config:
+  batch_size: 5
+  parallel_tool_calls: true
+  stream: true
+  temperature: 0.0
+  timeout: 60000.0
+ignore_errors: false
+judge:
+  aggregation: mean
+  contract:
+    prompt_template: null
+    score_mapping: null
+    score_type: pattern
+    system_prompt: null
+  min_valid_judges: 1
+  models:
+  - api_key: '**********'
+    api_url: http://127.0.0.1:8010/v1
+    eval_type: null
+    generation_config: {}
+    judge_id: MiMo-V2.5-Pro-FP4-DFlash
+    model_args: {}
+    model_id: MiMo-V2.5-Pro-FP4-DFlash
+  position_swap: auto
+  repeats: 1
+  strategy: llm
+limit: 3
+model: MiMo-V2.5-Pro-FP4-DFlash
+model_args: {}
+model_id: MiMo-V2.5-Pro-FP4-DFlash
+model_task: text_generation
+no_timestamp: false
+repeats: 1
+rerun_review: false
+resolved_benchmarks:
+  hle:
+    aggregation: mean
+    dataset_hub: modelscope
+    dataset_id: /mnt/share/w00937173/run_file/mimo-v2.5-pro/data/hle_dataset
+    dataset_revision: null
+    default_subset: default
+    eval_split: test
+    extra_params:
+      include_multi_modal: false
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    max_image_bytes: null
+    metric_list:
+    - accuracy
+    name: hle
+    primary_metric: null
+    prompt_template: '{question}'
+    query_template: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - Biology/Medicine
+    - Chemistry
+    - Computer Science/AI
+    - Engineering
+    - Humanities/Social Science
+    - Math
+    - Physics
+    - Other
+    system_prompt: null
+    train_split: null
+sandbox:
+  default_config: {}
+  enabled: false
+  engine: docker
+  manager_config: {}
+  pool_size: null
+sandbox_manager_config: {}
+sandbox_type: docker
+seed: 42
+stream: true
+timeout: 60000.0
+use_cache: null
+use_sandbox: false
+work_dir: /root/.cache/tests/output/accuracy/20260922/test_npu_mimo_v2_5_pro_w4a8_8p_a5_hle/20260922_125841
