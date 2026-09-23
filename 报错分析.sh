@@ -190,3 +190,10 @@ root@localhost:/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro
     #1: target=['3'] | answer= ❌
     #2: target=['\\begin{pmatrix}8&9\\\\9&8\\end{pmatrix}'] | answer=$\begin{pmatrix}-2&-1\\-1&-2\end{pmatrix}$ ❌
 
+
+
+
+    usage: analyze_hle_results.py [-h] [--judge-api JUDGE_API] [--judge-model JUDGE_MODEL] [--judge-api-key JUDGE_API_KEY] [--verbose] log_dir
+analyze_hle_results.py: error: unrecognized arguments: MiMo-V2.5-Pro-FP4-DFlash-v
+
+
