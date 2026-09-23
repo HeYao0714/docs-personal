@@ -132,3 +132,61 @@ root@localhost:/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro
 可评分的学科: MiMo-V2.5-Pro-FP4-DFlash/hle_Biology/Medicine, MiMo-V2.5-Pro-FP4-DFlash/hle_Chemistry, MiMo-V2.5-Pro-FP4-DFlash/hle_Computer Science/AI, MiMo-V2.5-Pro-FP4-DFlash/hle_Engineering, MiMo-V2.5-Pro-FP4-DFlash/hle_Humanities/Social Science, MiMo-V2.5-Pro-FP4-DFlash/hle_Math, MiMo-V2.5-Pro-FP4-DFlash/hle_Other, MiMo-V2.5-Pro-FP4-DFlash/hle_Physics
 
 
+
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Biology/Medicine ---
+  predictions:  1150547 B, 3 行 [完整]
+  reviews:      2287638 B, 3 行 [完整]
+    #1: target=['False'] | answer=true ❌
+    #2: target=['(1,4,5), (1,3,4,5,6)'] | answer= ❌
+    #0: target=['B'] | answer= ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Chemistry ---
+  predictions:   410885 B, 3 行 [完整]
+  reviews:       673766 B, 3 行 [完整]
+    #0: target=['1.776 * 10^-3'] | answer=1.8 * 10^-3 ❌
+    #2: target=['Al, Re2Al13; Al, ReAl12; Al, Re2Al9'] | answer=re_a, real12; al_a, al11re; al_b, al10re; al_c, al9re ❌
+    #1: target=['1.86'] | answer=$d \approx 1.86 \times 10^{28}$ ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Computer Science/AI ---
+  predictions:   971456 B, 3 行 [完整]
+  reviews:      1793435 B, 3 行 [完整]
+    #0: target=['Katie kicked the knotted kite string, knowing it would take skill to unknot the tangled mess.'] | answer="katie kicked the knotted kite string, knowing it would take skill to unknot the ❌
+    #1: target=['E'] | answer= ❌
+    #2: target=['C'] | answer= ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Engineering ---
+  predictions:    95833 B, 3 行 [完整]
+  reviews:        95084 B, 3 行 [完整]
+    #0: target=['F'] | answer=a ❌
+    #1: target=['10'] | answer=30 ❌
+    #2: target=['B'] | answer=a ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Humanities/Social Science ---
+  predictions:    27035 B, 3 行 [完整]
+  reviews:        31179 B, 3 行 [完整]
+    #0: target=['D'] | answer=d. weak non-sadism ❌
+    #1: target=['Sale Law'] | answer= ❌
+    #2: target=['Yes'] | answer=no, the account is both descriptive and normative ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Math ---
+  predictions:   648949 B, 3 行 [完整]
+  reviews:       922790 B, 3 行 [完整]
+    #0: target=['Z+Z+Z+Z+Z'] | answer=$\mathbb{z}^5$ ❌
+    #2: target=['$1 + 3x + 6x^2 + 8x^3 + 6x^4 + 3x^5 + x^6$'] | answer=$x^6 + 3x^5 + 6x^4 + 8x^3 + 6x^2 + 2x + 1$ ❌
+    #1: target=['18'] | answer= ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Other ---
+  predictions:   162880 B, 3 行 [完整]
+  reviews:       103438 B, 3 行 [完整]
+    #0: target=['yeyo'] | answer=ytyo ❌
+    #2: target=['Shuriken'] | answer=stiletto ❌
+    #1: target=['C'] | answer=d ❌
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Physics ---
+  predictions:   829354 B, 3 行 [完整]
+  reviews:      1490503 B, 3 行 [完整]
+    #0: target=['\\(-((d - 2k)^2) + d\\)'] | answer=$d - (d-2k)^2$ ❌
+    #1: target=['3'] | answer= ❌
+    #2: target=['\\begin{pmatrix}8&9\\\\9&8\\end{pmatrix}'] | answer=$\begin{pmatrix}-2&-1\\-1&-2\end{pmatrix}$ ❌
+
