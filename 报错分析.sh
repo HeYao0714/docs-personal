@@ -30,3 +30,31 @@ ValueError: No scores were collected for dataset "hle". Please check that sample
 2026-09-22 21:43:26,947 - ERROR - Command failed with return code: 1
 2026-09-22 21:43:26,947 - ERROR - Error executing command: Command 'test_env_evalscope/bin/python /tmp/evalscope_run_MiMo-V2.5-Pro-FP4-DFlash_hle.py' returned non-zero exit status 1.
 2026-09-22 21:43:26,947 - INFO - process group pgid=259954 already gone
+
+
+
+
+
+
+
+root@localhost:/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro# python3 analyze_hle_results.py /root/.cache/tests/output/accuracy/20260922/test_npu_mimo_v2_5_pro_w4a8_8p_a5_hle/20260922_125841
+================================================================================
+日志目录: /root/.cache/tests/output/accuracy/20260922/test_npu_mimo_v2_5_pro_w4a8_8p_a5_hle/20260922_125841
+发现 8 个学科
+================================================================================
+
+--- MiMo-V2.5-Pro-FP4-DFlash/hle_Biology/Medicine ---
+  predictions:  1150547 B, 3 行 [完整]
+  reviews:      2287638 B, 3 行 [完整]
+Traceback (most recent call last):
+  File "/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro/analyze_hle_results.py", line 230, in <module>
+    main()
+  File "/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro/analyze_hle_results.py", line 196, in main
+    answers = extract_answer_from_prediction(pred_files[subject])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro/analyze_hle_results.py", line 93, in extract_answer_from_prediction
+    text_blocks = [b.get("text", "") for b in content if b.get("type") == "text"]
+                                                         ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+root@localhost:/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro# 
+
