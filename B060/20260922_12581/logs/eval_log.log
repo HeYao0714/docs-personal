@@ -1,0 +1,725 @@
+2026-09-22 12:58:41 - evalscope - INFO: Running with native backend
+2026-09-22 12:58:41 - evalscope - INFO: Dump task config to /root/.cache/tests/output/accuracy/20260922/test_npu_mimo_v2_5_pro_w4a8_8p_a5_hle/20260922_125841/configs/task_config.yaml
+2026-09-22 12:58:41 - evalscope - INFO: {
+    "model_id": "MiMo-V2.5-Pro-FP4-DFlash",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "hle"
+    ],
+    "dataset_args": {
+        "hle": {
+            "local_path": "/mnt/share/w00937173/run_file/mimo-v2.5-pro/data/hle_dataset",
+            "extra_params": {
+                "include_multi_modal": false
+            }
+        }
+    },
+    "dataset_dir": "/root/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": 3,
+    "eval_batch_size": 5,
+    "use_cache": null,
+    "rerun_review": false,
+    "work_dir": "/root/.cache/tests/output/accuracy/20260922/test_npu_mimo_v2_5_pro_w4a8_8p_a5_hle/20260922_125841",
+    "no_timestamp": false,
+    "enable_progress_tracker": false,
+    "ignore_errors": false,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:20066/v1/chat/completions",
+    "api_key": "**********",
+    "timeout": 60000.0,
+    "stream": true,
+    "judge": {
+        "strategy": "llm",
+        "models": [
+            {
+                "model_id": "MiMo-V2.5-Pro-FP4-DFlash",
+                "judge_id": "MiMo-V2.5-Pro-FP4-DFlash",
+                "api_key": "**********",
+                "api_url": "http://127.0.0.1:8010/v1",
+                "eval_type": null,
+                "model_args": {},
+                "generation_config": {}
+            }
+        ],
+        "contract": {
+            "system_prompt": null,
+            "prompt_template": null,
+            "score_mapping": null,
+            "score_type": "pattern"
+        },
+        "repeats": 1,
+        "position_swap": "auto",
+        "aggregation": "mean",
+        "min_valid_judges": 1
+    },
+    "analysis_report": false,
+    "collect_perf": true,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.12.0",
+    "model": "MiMo-V2.5-Pro-FP4-DFlash",
+    "generation_config": {
+        "timeout": 60000.0,
+        "batch_size": 5,
+        "stream": true,
+        "temperature": 0.0,
+        "parallel_tool_calls": true
+    },
+    "sandbox": {
+        "enabled": false,
+        "engine": "docker",
+        "default_config": {},
+        "manager_config": {},
+        "pool_size": null
+    },
+    "agent_config": null
+}
+2026-09-22 12:58:41 - evalscope - INFO: Start loading benchmark dataset: hle
+2026-09-22 12:58:41 - evalscope - INFO: Loading dataset /mnt/share/w00937173/run_file/mimo-v2.5-pro/data/hle_dataset from local > subset: default > split: test ...
+2026-09-22 12:58:42 - evalscope - WARNING: hle: 24 samples to evaluate (8 subsets, --limit=3 per subset). Remove `--limit` for a formal evaluation.
+2026-09-22 12:58:42 - evalscope - INFO: Subsets of hle: ['Biology/Medicine', 'Chemistry', 'Computer Science/AI', 'Engineering', 'Humanities/Social Science', 'Math', 'Physics', 'Other']
+2026-09-22 12:58:42 - evalscope - INFO: Loading model for prediction...
+2026-09-22 12:58:42 - evalscope - INFO: Creating model MiMo-V2.5-Pro-FP4-DFlash with eval_type=openai_api base_url=http://127.0.0.1:20066/v1/chat/completions, config={'timeout': 60000.0, 'retries': 5, 'retry_interval': 10, 'batch_size': 5, 'stream': True, 'temperature': 0.0, 'parallel_tool_calls': True, 'anthropic_cache_strategy': 'evaluation'}, model_args={}
+2026-09-22 12:58:42 - evalscope - INFO: Model loaded successfully.
+2026-09-22 12:59:05 - evalscope - INFO: Creating model MiMo-V2.5-Pro-FP4-DFlash with eval_type=openai_api base_url=http://127.0.0.1:8010/v1, config={'retries': 5, 'retry_interval': 10, 'max_tokens': 4096, 'temperature': 0.0, 'anthropic_cache_strategy': 'evaluation'}, model_args={}
+2026-09-22 12:59:06 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 12:59:18 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 12:59:29 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 12:59:40 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 12:59:42 - evalscope - INFO: Evaluating[hle]   0%| 0/24 [Elapsed: 01:00 < Remaining: ?, ?it/s]
+2026-09-22 13:00:42 - evalscope - INFO: Evaluating[hle]   4%| 1/24 [Elapsed: 02:00 < Remaining: 27:13, 71.01s/it]
+2026-09-22 13:01:42 - evalscope - INFO: Evaluating[hle]   4%| 1/24 [Elapsed: 03:00 < Remaining: 27:13, 71.01s/it]
+2026-09-22 13:02:42 - evalscope - INFO: Evaluating[hle]   4%| 1/24 [Elapsed: 04:00 < Remaining: 27:13, 71.01s/it]
+2026-09-22 13:03:42 - evalscope - INFO: Evaluating[hle]   4%| 1/24 [Elapsed: 05:00 < Remaining: 27:13, 71.01s/it]
+2026-09-22 13:03:57 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:04:08 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:04:20 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:04:31 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:04:42 - evalscope - INFO: Evaluating[hle]   4%| 1/24 [Elapsed: 06:00 < Remaining: 27:13, 71.01s/it]
+2026-09-22 13:05:42 - evalscope - INFO: Evaluating[hle]   8%| 2/24 [Elapsed: 07:00 < Remaining: 1:13:16, 199.86s/it]
+2026-09-22 13:06:00 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:06:11 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:06:23 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:06:34 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:06:42 - evalscope - INFO: Evaluating[hle]   8%| 2/24 [Elapsed: 08:00 < Remaining: 1:13:16, 199.86s/it]
+2026-09-22 13:07:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 09:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:08:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 10:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:09:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 11:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:10:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 12:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:11:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 13:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:12:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 14:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:13:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 15:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:14:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 16:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:15:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 17:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:16:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 18:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:17:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 19:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:18:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 20:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:19:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 21:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:20:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 22:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:21:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 23:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:22:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 24:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:23:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 25:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:24:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 26:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:25:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 27:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:26:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 28:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:27:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 29:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:28:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 30:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:29:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 31:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:30:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 32:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:31:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 33:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:32:07 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:32:18 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:32:30 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:32:41 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 13:32:42 - evalscope - INFO: Evaluating[hle]  12%| 3/24 [Elapsed: 34:00 < Remaining: 57:40, 164.80s/it]
+2026-09-22 13:33:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 35:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:34:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 36:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:35:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 37:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:36:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 38:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:37:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 39:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:38:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 40:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:39:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 41:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:40:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 42:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:41:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 43:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:42:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 44:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:43:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 45:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:44:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 46:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:45:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 47:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:46:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 48:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:47:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 49:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:48:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 50:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:49:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 51:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:50:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 52:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:51:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 53:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:52:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 54:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:53:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 55:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:54:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 56:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:55:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 57:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:56:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 58:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:57:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 59:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:58:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:00:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 13:59:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:01:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:00:42 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:02:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:01:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:03:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:02:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:04:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:03:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:05:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:04:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:06:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:05:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:07:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:06:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:08:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:07:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:09:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:08:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:10:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:09:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:11:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:10:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:12:00 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:11:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:13:01 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:12:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:14:01 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:13:14 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:13:26 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:13:37 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:13:43 - evalscope - INFO: Evaluating[hle]  17%| 4/24 [Elapsed: 1:15:01 < Remaining: 3:59:23, 718.16s/it]
+2026-09-22 14:13:49 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:14:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:16:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:15:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:17:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:16:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:18:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:17:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:19:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:18:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:20:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:19:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:21:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:20:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:22:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:21:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:23:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:22:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:24:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:23:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:25:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:24:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:26:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:25:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:27:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:26:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:28:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:27:18 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:27:29 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:27:40 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:27:43 - evalscope - INFO: Evaluating[hle]  21%| 5/24 [Elapsed: 1:29:01 < Remaining: 7:07:17, 1349.32s/it]
+2026-09-22 14:27:52 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 14:28:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:30:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:29:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:31:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:30:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:32:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:31:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:33:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:32:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:34:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:33:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:35:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:34:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:36:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:35:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:37:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:36:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:38:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:37:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:39:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:38:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:40:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:39:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:41:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:40:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:42:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:41:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:43:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:42:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:44:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:43:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:45:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:44:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:46:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:45:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:47:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:46:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:48:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:47:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:49:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:48:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:50:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:49:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:51:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:50:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:52:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:51:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:53:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:52:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:54:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:53:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:55:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:54:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:56:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:55:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:57:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:56:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:58:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:57:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 1:59:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:58:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:00:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 14:59:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:01:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:00:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:02:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:01:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:03:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:02:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:04:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:03:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:05:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:04:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:06:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:05:04 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:05:16 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:05:27 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:05:38 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:05:43 - evalscope - INFO: Evaluating[hle]  25%| 6/24 [Elapsed: 2:07:01 < Remaining: 5:53:09, 1177.22s/it]
+2026-09-22 15:06:43 - evalscope - INFO: Evaluating[hle]  29%| 7/24 [Elapsed: 2:08:01 < Remaining: 7:14:25, 1533.29s/it]
+2026-09-22 15:07:43 - evalscope - INFO: Evaluating[hle]  29%| 7/24 [Elapsed: 2:09:01 < Remaining: 7:14:25, 1533.29s/it]
+2026-09-22 15:08:31 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:08:42 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:08:43 - evalscope - INFO: Evaluating[hle]  29%| 7/24 [Elapsed: 2:10:01 < Remaining: 7:14:25, 1533.29s/it]
+2026-09-22 15:08:53 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:09:05 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:09:43 - evalscope - INFO: Evaluating[hle]  33%| 8/24 [Elapsed: 2:11:01 < Remaining: 4:56:12, 1110.75s/it]
+2026-09-22 15:10:43 - evalscope - INFO: Evaluating[hle]  33%| 8/24 [Elapsed: 2:12:01 < Remaining: 4:56:12, 1110.75s/it]
+2026-09-22 15:11:43 - evalscope - INFO: Evaluating[hle]  33%| 8/24 [Elapsed: 2:13:01 < Remaining: 4:56:12, 1110.75s/it]
+2026-09-22 15:12:43 - evalscope - INFO: Evaluating[hle]  33%| 8/24 [Elapsed: 2:14:01 < Remaining: 4:56:12, 1110.75s/it]
+2026-09-22 15:13:43 - evalscope - INFO: Evaluating[hle]  33%| 8/24 [Elapsed: 2:15:01 < Remaining: 4:56:12, 1110.75s/it]
+2026-09-22 15:14:08 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:19 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:20 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:30 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:32 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:42 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:43 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:14:43 - evalscope - INFO: Evaluating[hle]  33%| 8/24 [Elapsed: 2:16:01 < Remaining: 4:56:12, 1110.75s/it]
+2026-09-22 15:14:54 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 15:15:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:17:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:16:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:18:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:17:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:19:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:18:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:20:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:19:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:21:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:20:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:22:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:21:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:23:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:22:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:24:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:23:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:25:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:24:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:26:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:25:43 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:27:01 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:26:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:28:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:27:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:29:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:28:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:30:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:29:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:31:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:30:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:32:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:31:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:33:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:32:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:34:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:33:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:35:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:34:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:36:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:35:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:37:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:36:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:38:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:37:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:39:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:38:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:40:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:39:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:41:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:40:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:42:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:41:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:43:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:42:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:44:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:43:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:45:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:44:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:46:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:45:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:47:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:46:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:48:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:47:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:49:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:48:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:50:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:49:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:51:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:50:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:52:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:51:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:53:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:52:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:54:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:53:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:55:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:54:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:56:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:55:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:57:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:56:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:58:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:57:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 2:59:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:58:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:00:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 15:59:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:01:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:00:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:02:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:01:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:03:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:02:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:04:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:03:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:05:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:04:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:06:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:05:40 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:05:44 - evalscope - INFO: Evaluating[hle]  42%| 10/24 [Elapsed: 3:07:02 < Remaining: 2:21:05, 604.66s/it]
+2026-09-22 16:05:52 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:06:03 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:06:14 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:06:44 - evalscope - INFO: Evaluating[hle]  46%| 11/24 [Elapsed: 3:08:02 < Remaining: 4:55:08, 1362.17s/it]
+2026-09-22 16:07:00 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:11 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:22 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:22 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:33 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:34 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:44 - evalscope - INFO: Evaluating[hle]  46%| 11/24 [Elapsed: 3:09:02 < Remaining: 4:55:08, 1362.17s/it]
+2026-09-22 16:07:44 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:07:56 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 16:08:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:10:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:09:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:11:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:10:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:12:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:11:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:13:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:12:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:14:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:13:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:15:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:14:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:16:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:15:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:17:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:16:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:18:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:17:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:19:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:18:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:20:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:19:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:21:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:20:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:22:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:21:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:23:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:22:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:24:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:23:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:25:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:24:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:26:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:25:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:27:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:26:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:28:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:27:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:29:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:28:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:30:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:29:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:31:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:30:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:32:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:31:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:33:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:32:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:34:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:33:44 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:35:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:34:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:36:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:35:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:37:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:36:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:38:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:37:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:39:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:38:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:40:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:39:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:41:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:40:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:42:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:41:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:43:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:42:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:44:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:43:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:45:02 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:44:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:46:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:45:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:47:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:46:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:48:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:47:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:49:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:48:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:50:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:49:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:51:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:50:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:52:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:51:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:53:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:52:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:54:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:53:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:55:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:54:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:56:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:55:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:57:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:56:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:58:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:57:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 3:59:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:58:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:00:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 16:59:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:01:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:00:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:02:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:01:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:03:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:02:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:04:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:03:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:05:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:04:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:06:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:05:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:07:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:06:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:08:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:07:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:09:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:08:12 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 17:08:23 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 17:08:34 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 17:08:45 - evalscope - INFO: Evaluating[hle]  54%| 13/24 [Elapsed: 4:10:03 < Remaining: 2:05:24, 684.09s/it]
+2026-09-22 17:08:45 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 17:09:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:11:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:10:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:12:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:11:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:13:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:12:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:14:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:13:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:15:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:14:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:16:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:15:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:17:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:16:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:18:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:17:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:19:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:18:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:20:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:19:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:21:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:20:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:22:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:21:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:23:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:22:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:24:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:23:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:25:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:24:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:26:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:25:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:27:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:26:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:28:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:27:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:29:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:28:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:30:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:29:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:31:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:30:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:32:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:31:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:33:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:32:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:34:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:33:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:35:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:34:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:36:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:35:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:37:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:36:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:38:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:37:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:39:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:38:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:40:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:39:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:41:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:40:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:42:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:41:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:43:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:42:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:44:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:43:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:45:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:44:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:46:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:45:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:47:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:46:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:48:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:47:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:49:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:48:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:50:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:49:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:51:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:50:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:52:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:51:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:53:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:52:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:54:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:53:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:55:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:54:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:56:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:55:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:57:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:56:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:58:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:57:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 4:59:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:58:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:00:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 17:59:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:01:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:00:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:02:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:01:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:03:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:02:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:04:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:03:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:05:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:04:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:06:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:05:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:07:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:06:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:08:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:07:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:09:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:08:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:10:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:09:37 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:09:45 - evalscope - INFO: Evaluating[hle]  58%| 14/24 [Elapsed: 5:11:03 < Remaining: 4:23:18, 1579.89s/it]
+2026-09-22 18:09:49 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:10:00 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:10:11 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:10:45 - evalscope - INFO: Evaluating[hle]  62%| 15/24 [Elapsed: 5:12:03 < Remaining: 5:32:14, 2214.92s/it]
+2026-09-22 18:11:45 - evalscope - INFO: Evaluating[hle]  62%| 15/24 [Elapsed: 5:13:03 < Remaining: 5:32:14, 2214.92s/it]
+2026-09-22 18:12:45 - evalscope - INFO: Evaluating[hle]  62%| 15/24 [Elapsed: 5:14:03 < Remaining: 5:32:14, 2214.92s/it]
+2026-09-22 18:13:46 - evalscope - INFO: Evaluating[hle]  62%| 15/24 [Elapsed: 5:15:03 < Remaining: 5:32:14, 2214.92s/it]
+2026-09-22 18:14:45 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:14:46 - evalscope - INFO: Evaluating[hle]  62%| 15/24 [Elapsed: 5:16:03 < Remaining: 5:32:14, 2214.92s/it]
+2026-09-22 18:14:57 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:15:08 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:15:20 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:15:46 - evalscope - INFO: Evaluating[hle]  67%| 16/24 [Elapsed: 5:17:03 < Remaining: 3:38:47, 1640.95s/it]
+2026-09-22 18:16:46 - evalscope - INFO: Evaluating[hle]  67%| 16/24 [Elapsed: 5:18:03 < Remaining: 3:38:47, 1640.95s/it]
+2026-09-22 18:17:46 - evalscope - INFO: Evaluating[hle]  67%| 16/24 [Elapsed: 5:19:03 < Remaining: 3:38:47, 1640.95s/it]
+2026-09-22 18:18:46 - evalscope - INFO: Evaluating[hle]  67%| 16/24 [Elapsed: 5:20:03 < Remaining: 3:38:47, 1640.95s/it]
+2026-09-22 18:19:46 - evalscope - INFO: Evaluating[hle]  67%| 16/24 [Elapsed: 5:21:03 < Remaining: 3:38:47, 1640.95s/it]
+2026-09-22 18:20:32 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:20:43 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:20:46 - evalscope - INFO: Evaluating[hle]  67%| 16/24 [Elapsed: 5:22:03 < Remaining: 3:38:47, 1640.95s/it]
+2026-09-22 18:20:54 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:21:05 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:21:46 - evalscope - INFO: Evaluating[hle]  71%| 17/24 [Elapsed: 5:23:03 < Remaining: 2:26:01, 1251.58s/it]
+2026-09-22 18:22:46 - evalscope - INFO: Evaluating[hle]  71%| 17/24 [Elapsed: 5:24:03 < Remaining: 2:26:01, 1251.58s/it]
+2026-09-22 18:23:46 - evalscope - INFO: Evaluating[hle]  71%| 17/24 [Elapsed: 5:25:04 < Remaining: 2:26:01, 1251.58s/it]
+2026-09-22 18:24:46 - evalscope - INFO: Evaluating[hle]  71%| 17/24 [Elapsed: 5:26:04 < Remaining: 2:26:01, 1251.58s/it]
+2026-09-22 18:25:30 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:25:41 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:25:46 - evalscope - INFO: Evaluating[hle]  71%| 17/24 [Elapsed: 5:27:04 < Remaining: 2:26:01, 1251.58s/it]
+2026-09-22 18:25:53 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:26:04 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:26:17 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:26:28 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:26:39 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:26:46 - evalscope - INFO: Evaluating[hle]  75%| 18/24 [Elapsed: 5:28:04 < Remaining: 1:36:30, 965.05s/it]
+2026-09-22 18:26:51 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:27:46 - evalscope - INFO: Evaluating[hle]  79%| 19/24 [Elapsed: 5:29:04 < Remaining: 57:26, 689.33s/it]
+2026-09-22 18:28:46 - evalscope - INFO: Evaluating[hle]  79%| 19/24 [Elapsed: 5:30:04 < Remaining: 57:26, 689.33s/it]
+2026-09-22 18:29:46 - evalscope - INFO: Evaluating[hle]  79%| 19/24 [Elapsed: 5:31:04 < Remaining: 57:26, 689.33s/it]
+2026-09-22 18:30:02 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:30:13 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:30:25 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:30:36 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 18:30:46 - evalscope - INFO: Evaluating[hle]  79%| 19/24 [Elapsed: 5:32:04 < Remaining: 57:26, 689.33s/it]
+2026-09-22 18:31:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:33:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:32:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:34:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:33:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:35:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:34:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:36:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:35:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:37:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:36:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:38:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:37:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:39:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:38:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:40:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:39:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:41:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:40:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:42:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:41:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:43:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:42:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:44:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:43:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:45:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:44:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:46:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:45:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:47:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:46:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:48:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:47:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:49:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:48:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:50:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:49:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:51:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:50:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:52:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:51:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:53:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:52:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:54:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:53:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:55:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:54:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:56:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:55:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:57:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:56:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:58:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:57:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 5:59:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:58:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:00:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 18:59:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:01:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:00:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:02:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:01:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:03:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:02:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:04:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:03:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:05:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:04:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:06:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:05:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:07:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:06:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:08:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:07:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:09:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:08:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:10:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:09:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:11:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:10:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:12:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:11:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:13:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:12:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:14:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:13:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:15:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:14:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:16:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:15:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:17:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:16:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:18:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:17:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:19:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:18:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:20:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:19:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:21:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:20:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:22:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:21:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:23:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:22:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:24:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:23:27 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:23:39 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:23:46 - evalscope - INFO: Evaluating[hle]  83%| 20/24 [Elapsed: 6:25:04 < Remaining: 36:39, 549.93s/it]
+2026-09-22 19:23:50 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:24:02 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:24:46 - evalscope - INFO: Evaluating[hle]  88%| 21/24 [Elapsed: 6:26:04 < Remaining: 1:07:21, 1347.10s/it]
+2026-09-22 19:25:46 - evalscope - INFO: Evaluating[hle]  88%| 21/24 [Elapsed: 6:27:04 < Remaining: 1:07:21, 1347.10s/it]
+2026-09-22 19:26:46 - evalscope - INFO: Evaluating[hle]  88%| 21/24 [Elapsed: 6:28:04 < Remaining: 1:07:21, 1347.10s/it]
+2026-09-22 19:27:46 - evalscope - INFO: Evaluating[hle]  88%| 21/24 [Elapsed: 6:29:04 < Remaining: 1:07:21, 1347.10s/it]
+2026-09-22 19:28:24 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:28:35 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:28:46 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:28:46 - evalscope - INFO: Evaluating[hle]  88%| 21/24 [Elapsed: 6:30:04 < Remaining: 1:07:21, 1347.10s/it]
+2026-09-22 19:28:57 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 19:29:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:31:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:30:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:32:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:31:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:33:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:32:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:34:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:33:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:35:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:34:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:36:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:35:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:37:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:36:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:38:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:37:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:39:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:38:46 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:40:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:39:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:41:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:40:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:42:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:41:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:43:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:42:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:44:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:43:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:45:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:44:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:46:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:45:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:47:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:46:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:48:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:47:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:49:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:48:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:50:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:49:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:51:04 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:50:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:52:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:51:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:53:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:52:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:54:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:53:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:55:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:54:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:56:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:55:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:57:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:56:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:58:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:57:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 6:59:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:58:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:00:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 19:59:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:01:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:00:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:02:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:01:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:03:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:02:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:04:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:03:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:05:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:04:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:06:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:05:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:07:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:06:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:08:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:07:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:09:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:08:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:10:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:09:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:11:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:10:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:12:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:11:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:13:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:12:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:14:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:13:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:15:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:14:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:16:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:15:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:17:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:16:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:18:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:17:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:19:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:18:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:20:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:19:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:21:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:20:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:22:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:21:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:23:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:22:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:24:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:23:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:25:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:24:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:26:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:25:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:27:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:26:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:28:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:27:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:29:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:28:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:30:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:29:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:31:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:30:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:32:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:31:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:33:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:32:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:34:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:33:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:35:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:34:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:36:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:35:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:37:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:36:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:38:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:37:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:39:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:38:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:40:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:39:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:41:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:40:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:42:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:41:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:43:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:42:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:44:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:43:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:45:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:44:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:46:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:45:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:47:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:46:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:48:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:47:47 - evalscope - INFO: Evaluating[hle]  92%| 22/24 [Elapsed: 7:49:05 < Remaining: 34:23, 1031.66s/it]
+2026-09-22 20:47:50 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 20:48:02 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 20:48:13 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 20:48:24 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 20:48:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:50:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:49:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:51:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:50:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:52:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:51:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:53:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:52:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:54:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:53:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:55:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:54:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:56:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:55:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:57:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:56:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:58:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:57:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 7:59:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:58:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:00:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 20:59:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:01:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:00:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:02:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:01:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:03:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:02:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:04:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:03:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:05:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:04:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:06:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:05:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:07:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:06:47 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:08:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:07:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:09:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:08:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:10:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:09:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:11:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:10:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:12:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:11:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:13:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:12:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:14:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:13:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:15:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:14:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:16:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:15:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:17:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:16:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:18:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:17:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:19:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:18:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:20:05 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:19:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:21:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:20:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:22:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:21:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:23:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:22:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:24:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:23:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:25:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:24:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:26:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:25:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:27:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:26:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:28:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:27:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:29:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:28:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:30:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:29:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:31:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:30:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:32:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:31:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:33:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:32:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:34:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:33:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:35:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:34:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:36:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:35:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:37:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:36:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:38:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:37:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:39:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:38:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:40:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:39:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:41:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:40:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:42:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:41:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:43:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:42:41 - evalscope - WARNING: Attempt 1 / 5 failed: Connection error.. Retrying...
+2026-09-22 21:42:48 - evalscope - INFO: Evaluating[hle]  96%| 23/24 [Elapsed: 8:44:06 < Remaining: 35:52, 2152.55s/it]
+2026-09-22 21:42:52 - evalscope - WARNING: Attempt 2 / 5 failed: Connection error.. Retrying...
+2026-09-22 21:43:03 - evalscope - WARNING: Attempt 3 / 5 failed: Connection error.. Retrying...
+2026-09-22 21:43:15 - evalscope - WARNING: Attempt 4 / 5 failed: Connection error.. Retrying...
+2026-09-22 21:43:26 - evalscope - INFO: Evaluating[hle] 100%| 24/24 [Elapsed: 8:44:44 < Remaining: 00:00, 2493.72s/it]
+2026-09-22 21:43:26 - evalscope - INFO: hle: predictions complete, aggregating scores...
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Biology/Medicine
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Chemistry
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Computer Science/AI
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Engineering
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Humanities/Social Science
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Math
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Physics
+2026-09-22 21:43:26 - evalscope - INFO: Aggregating scores for subset: Other
+2026-09-22 21:43:26 - evalscope - INFO: Generating report...
+2026-09-22 21:43:26 - evalscope - INFO: Running[eval]   0%| 0/1 [Elapsed: 8:44:44 < Remaining: ?, ?benchmark/s]
