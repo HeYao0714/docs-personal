@@ -197,3 +197,10 @@ root@localhost:/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro
 analyze_hle_results.py: error: unrecognized arguments: MiMo-V2.5-Pro-FP4-DFlash-v
 
 
+root@localhost:/home/h30085291/sglang/test/registered/npu/accuracy/mimo_v2_5_pro# python3 analyze_hle_results.py /root/.cache/tests/output/accuracy/20260922/test_npu_mimo_v2_5_pro_w4a8_8p_a5_hle/20260922_125841 \
+> --judge-api http://127.0.0.1:8010/v1\
+> --judge-model MiMo-V2.5-Pro-FP4-DFlash\
+> --verbose
+usage: analyze_hle_results.py [-h] [--judge-api JUDGE_API] [--judge-model JUDGE_MODEL] [--judge-api-key JUDGE_API_KEY] [--verbose] log_dir
+analyze_hle_results.py: error: unrecognized arguments: MiMo-V2.5-Pro-FP4-DFlash--verbose
+
