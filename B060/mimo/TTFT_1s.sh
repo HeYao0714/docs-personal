@@ -51,7 +51,7 @@ export HCCL_HOST_SOCKET_PORT_RANGE=auto
 # USE_SCATTER_PA_KV_CACHE
 export SGLANG_NPU_USE_SCATTER_PA_KV_CACHE=1
 
-export PYTHONPATH=/mnt/share/w00937173/sglang/python:$PYTHONPATH
+# export PYTHONPATH=/mnt/share/w00937173/sglang/python:$PYTHONPATH
 MODEL_PATH=/mnt/share/weights/MiMo-V2.5-Pro-FP4-DFlash
 DFLASH_PATH=/mnt/share/weights/MiMo-V2.5-Pro-FP4-DFlash/dflash
 
