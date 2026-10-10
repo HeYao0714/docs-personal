@@ -72,3 +72,55 @@ Prefill batch 与 Decode batch 后的第一个数字表示全局forward的次数
 如果添加 --skil-server-warmup，就可以看到Prefill batch的初始值是从1开始的。
 
 由于中间要求隔400轮的forward，因此理想情况下相邻的两个prefill请求就是间隔401。
+
+
+
+[2026-10-10 07:22:15] Prefill batch [1], #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, npu graph: False, input throughput (token/s): 3.48
+[2026-10-10 07:22:15] The server is fired up and ready to roll!
+[2026-10-10 07:22:20] Prefill batch [10], #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, npu graph: False, input throughput (token/s): 0.20
+[2026-10-10 07:22:21] Prefill batch [12], #new-seq: 1, #new-token: 3, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 1, #pending-token: 0, npu graph: False, input throughput (token/s): 2.99
+[2026-10-10 07:22:21] Decode batch [43], #running-req: 1, #token: 128, token usage: 0.00, npu graph: True, gen throughput (token/s): 5.04, #queue-req: 1
+[2026-10-10 07:22:21] Decode batch [83], #running-req: 1, #token: 128, token usage: 0.00, npu graph: True, gen throughput (token/s): 148.60, #queue-req: 1
+[2026-10-10 07:22:22] Decode batch [123], #running-req: 1, #token: 128, token usage: 0.00, npu graph: True, gen throughput (token/s): 146.51, #queue-req: 1
+[2026-10-10 07:22:22] Decode batch [163], #running-req: 1, #token: 256, token usage: 0.00, npu graph: True, gen throughput (token/s): 143.59, #queue-req: 1
+[2026-10-10 07:22:22] Decode batch [203], #running-req: 1, #token: 256, token usage: 0.00, npu graph: True, gen throughput (token/s): 146.45, #queue-req: 1
+[2026-10-10 07:22:22] Decode batch [243], #running-req: 1, #token: 256, token usage: 0.00, npu graph: True, gen throughput (token/s): 146.58, #queue-req: 1
+[2026-10-10 07:22:23] Decode batch [283], #running-req: 1, #token: 384, token usage: 0.00, npu graph: True, gen throughput (token/s): 144.68, #queue-req: 1
+[2026-10-10 07:22:23] Decode batch [323], #running-req: 1, #token: 384, token usage: 0.00, npu graph: True, gen throughput (token/s): 145.17, #queue-req: 1
+[2026-10-10 07:22:23] Decode batch [363], #running-req: 1, #token: 384, token usage: 0.00, npu graph: True, gen throughput (token/s): 143.14, #queue-req: 1
+[2026-10-10 07:22:24] Decode batch [403], #running-req: 1, #token: 512, token usage: 0.01, npu graph: True, gen throughput (token/s): 168.19, #queue-req: 1
+[2026-10-10 07:22:24] Prefill batch [413], #new-seq: 1, #new-token: 3, #cached-token: 0, token usage: 0.01, #running-req: 1, #queue-req: 0, #pending-token: 0, npu graph: False, input throughput (token/s): 1.11
+[2026-10-10 07:22:24] Decode batch [444], #running-req: 2, #token: 640, token usage: 0.01, npu graph: True, gen throughput (token/s): 270.00, #queue-req: 0
+[2026-10-10 07:22:24] Decode batch [484], #running-req: 2, #token: 640, token usage: 0.01, npu graph: True, gen throughput (token/s): 340.53, #queue-req: 0
+[2026-10-10 07:22:24] Decode batch [524], #running-req: 2, #token: 768, token usage: 0.01, npu graph: True, gen throughput (token/s): 339.47, #queue-req: 0
+[2026-10-10 07:22:25] Decode batch [564], #running-req: 2, #token: 896, token usage: 0.01, npu graph: True, gen throughput (token/s): 330.81, #queue-req: 0
+[2026-10-10 07:22:25] Decode batch [604], #running-req: 2, #token: 896, token usage: 0.01, npu graph: True, gen throughput (token/s): 330.78, #queue-req: 0
+[2026-10-10 07:22:25] Decode batch [644], #running-req: 2, #token: 896, token usage: 0.01, npu graph: True, gen throughput (token/s): 331.27, #queue-req: 0
+[2026-10-10 07:22:25] Decode batch [684], #running-req: 1, #token: 384, token usage: 0.00, npu graph: True, gen throughput (token/s): 202.91, #queue-req: 0
+[2026-10-10 07:22:25] Decode batch [724], #running-req: 1, #token: 384, token usage: 0.00, npu graph: True, gen throughput (token/s): 172.23, #queue-req: 0
+[2026-10-10 07:22:26] Decode batch [764], #running-req: 1, #token: 384, token usage: 0.00, npu graph: True, gen throughput (token/s): 170.61, #queue-req: 0
+[2026-10-10 07:22:26] Decode batch [804], #running-req: 1, #token: 512, token usage: 0.01, npu graph: True, gen throughput (token/s): 169.68, #queue-req: 0
+[2026-10-10 07:22:26] Decode batch [844], #running-req: 1, #token: 512, token usage: 0.01, npu graph: True, gen throughput (token/s): 170.39, #queue-req: 0
+[2026-10-10 07:22:26] Decode batch [884], #running-req: 1, #token: 512, token usage: 0.01, npu graph: True, gen throughput (token/s): 164.75, #queue-req: 0
+[2026-10-10 07:22:27] Decode batch [924], #running-req: 1, #token: 640, token usage: 0.01, npu graph: True, gen throughput (token/s): 152.80, #queue-req: 0
+[2026-10-10 07:22:27] Decode batch [964], #running-req: 1, #token: 640, token usage: 0.01, npu graph: True, gen throughput (token/s): 149.81, #queue-req: 0
+[2026-10-10 07:22:27] Decode batch [1004], #running-req: 1, #token: 640, token usage: 0.01, npu graph: True, gen throughput (token/s): 151.63, #queue-req: 0
+[2026-10-10 07:22:27] Decode batch [1044], #running-req: 1, #token: 640, token usage: 0.01, npu graph: True, gen throughput (token/s): 153.51, #queue-req: 0
+Traceback (most recent call last):
+  File "/sgl-workspace/sglang/python/sglang/srt/utils/common.py", line 3681, in retry
+    return fn()
+           ^^^^
+  File "/sgl-workspace/sglang/python/sglang/test/test_utils.py", line 2401, in <lambda>
+    lambda: super(CustomTestCase, self)._callTestMethod(method),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python3.12.13/lib/python3.12/unittest/case.py", line 589, in _callTestMethod
+    if method() is not None:
+       ^^^^^^^^
+  File "/mnt/share/h30085291/heyao/sglang/test/registered/npu/basic_function/memory_and_scheduling/test_npu_prefill_decode_interval.py", line 142, in test_prefill_decode_interval
+    self.assertGreaterEqual(
+  File "/usr/local/python3.12.13/lib/python3.12/unittest/case.py", line 1275, in assertGreaterEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/usr/local/python3.12.13/lib/python3.12/unittest/case.py", line 715, in fail
+    raise self.failureException(msg)
+AssertionError: 1 not greater than or equal to 2 : Expected at least 2 Prefill batch entries, got 1. Logs: Capturing batches (bs=8 avail_mem=1.51 GB):  50%|█████     | 3/6 [00:00<00:00,  4.31it/s]
+
