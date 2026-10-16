@@ -77,3 +77,5 @@ bl0wPSGf/+ZJTJ44562RX/%I
 
 跑两遍，第一遍跑完后调用下  curl --location 'http://61.47.19.68:9999/flush_cache' --header 'Content-Type: application/json'    61.47.19.68:9999 这个改为prefill节点的ip
 
+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
+
