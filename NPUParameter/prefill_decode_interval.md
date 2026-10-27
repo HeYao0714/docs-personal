@@ -79,3 +79,4 @@ bl0wPSGf/+ZJTJ44562RX/%I
 
 "extra_body": {"chat_template_kwargs": {"enable_thinking": False}},
 
+export SGLANG_NPU_ARCH35_REQUANT_BLOCK_FP8=1
