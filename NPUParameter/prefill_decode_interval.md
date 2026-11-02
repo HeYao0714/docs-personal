@@ -80,3 +80,5 @@ bl0wPSGf/+ZJTJ44562RX/%I
 "extra_body": {"chat_template_kwargs": {"enable_thinking": False}},
 
 export SGLANG_NPU_ARCH35_REQUANT_BLOCK_FP8=1
+python -m pip install "sgl-eval @ git+https://github.com/sgl-project/sgl-eval.git@6690895609dcbc5df1e7b00dd57c9502b868ec4d"
+
