@@ -73,12 +73,15 @@ Prefill batch 与 Decode batch 后的第一个数字表示全局forward的次数
 
 由于中间要求隔400轮的forward，因此理想情况下相邻的两个prefill请求就是间隔401。
 
-bl0wPSGf/+ZJTJ44562RX/%I
 
-跑两遍，第一遍跑完后调用下  curl --location 'http://61.47.19.68:9999/flush_cache' --header 'Content-Type: application/json'    61.47.19.68:9999 这个改为prefill节点的ip
+记录：
+bl0wPSGf/+ZJTJ44562RX/%I
 
 "extra_body": {"chat_template_kwargs": {"enable_thinking": False}},
 
 export SGLANG_NPU_ARCH35_REQUANT_BLOCK_FP8=1
+
 python -m pip install "sgl-eval @ git+https://github.com/sgl-project/sgl-eval.git@6690895609dcbc5df1e7b00dd57c9502b868ec4d"
+
+ValueError: DeepSeek V3.2 prefill CP does not support --cp-strategy zigzag; use interleave.
 
