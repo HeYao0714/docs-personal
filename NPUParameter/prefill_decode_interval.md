@@ -85,3 +85,5 @@ python -m pip install "sgl-eval @ git+https://github.com/sgl-project/sgl-eval.gi
 
 ValueError: DeepSeek V3.2 prefill CP does not support --cp-strategy zigzag; use interleave.
 
+quay.io/ascend/sglang:cann9.2.0-a3-20261109
+
