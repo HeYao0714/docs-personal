@@ -1,0 +1,11 @@
+python -m sglang.bench_serving \
+--dataset-name random \
+--backend sglang \
+--host 127.0.0.1 --port 8024 \
+--max-concurrency 1 --num-prompts 10 \
+--warmup-requests 1 \
+--random-input-len 131072 \
+--random-output-len 1 \
+--random-range-ratio 1 \
+--dataset-path /home/wzy/ShareGPT_V3_unfiltered_cleaned_split.json \
+--output-file ./output
